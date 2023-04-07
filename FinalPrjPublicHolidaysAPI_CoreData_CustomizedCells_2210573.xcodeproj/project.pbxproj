@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C60EE97C29E07AA800BBEA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE97B29E07AA800BBEA69 /* AppDelegate.swift */; };
+		C60EE97E29E07AA800BBEA69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE97D29E07AA800BBEA69 /* SceneDelegate.swift */; };
+		C60EE98029E07AA800BBEA69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE97F29E07AA800BBEA69 /* ViewController.swift */; };
+		C60EE98329E07AA800BBEA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60EE98129E07AA800BBEA69 /* Main.storyboard */; };
+		C60EE98629E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C60EE98429E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld */; };
+		C60EE98829E07AAB00BBEA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60EE98729E07AAB00BBEA69 /* Assets.xcassets */; };
+		C60EE98B29E07AAB00BBEA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60EE98929E07AAB00BBEA69 /* LaunchScreen.storyboard */; };
+		C60EE99A29E07BC800BBEA69 /* EnumSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE99829E07BC800BBEA69 /* EnumSegue.swift */; };
+		C60EE99B29E07BC800BBEA69 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE99929E07BC800BBEA69 /* Toast.swift */; };
+		C60EE99E29E07D7E00BBEA69 /* SearchHolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE99C29E07D7E00BBEA69 /* SearchHolidaysViewController.swift */; };
+		C60EE99F29E07D7E00BBEA69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */; };
+		C60EE9A129E0842300BBEA69 /* HolidaysDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE9A029E0842300BBEA69 /* HolidaysDetailsViewController.swift */; };
+		C60EE9A329E0846800BBEA69 /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C60EE97829E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60EE97B29E07AA800BBEA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C60EE97D29E07AA800BBEA69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C60EE97F29E07AA800BBEA69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C60EE98229E07AA800BBEA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C60EE98529E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodel; sourceTree = "<group>"; };
+		C60EE98729E07AAB00BBEA69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C60EE98A29E07AAB00BBEA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C60EE98C29E07AAB00BBEA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C60EE99829E07BC800BBEA69 /* EnumSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSegue.swift; sourceTree = "<group>"; };
+		C60EE99929E07BC800BBEA69 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		C60EE99C29E07D7E00BBEA69 /* SearchHolidaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHolidaysViewController.swift; sourceTree = "<group>"; };
+		C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C60EE9A029E0842300BBEA69 /* HolidaysDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDetailsViewController.swift; sourceTree = "<group>"; };
+		C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C60EE97529E07AA800BBEA69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C60EE96F29E07AA800BBEA69 = {
+			isa = PBXGroup;
+			children = (
+				C60EE97A29E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573 */,
+				C60EE97929E07AA800BBEA69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C60EE97929E07AA800BBEA69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C60EE97829E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C60EE97A29E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573 */ = {
+			isa = PBXGroup;
+			children = (
+				C60EE99729E07B8600BBEA69 /* Source */,
+				C60EE99629E07B7300BBEA69 /* Service */,
+				C60EE99529E07B6300BBEA69 /* Controller */,
+				C60EE99429E07B5900BBEA69 /* View */,
+				C60EE99329E07B5000BBEA69 /* Model */,
+				C60EE97B29E07AA800BBEA69 /* AppDelegate.swift */,
+				C60EE97D29E07AA800BBEA69 /* SceneDelegate.swift */,
+				C60EE98729E07AAB00BBEA69 /* Assets.xcassets */,
+				C60EE98929E07AAB00BBEA69 /* LaunchScreen.storyboard */,
+				C60EE98C29E07AAB00BBEA69 /* Info.plist */,
+				C60EE98429E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld */,
+			);
+			path = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573;
+			sourceTree = "<group>";
+		};
+		C60EE99329E07B5000BBEA69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C60EE99429E07B5900BBEA69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C60EE98129E07AA800BBEA69 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C60EE99529E07B6300BBEA69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C60EE99C29E07D7E00BBEA69 /* SearchHolidaysViewController.swift */,
+				C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */,
+				C60EE97F29E07AA800BBEA69 /* ViewController.swift */,
+				C60EE9A029E0842300BBEA69 /* HolidaysDetailsViewController.swift */,
+				C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C60EE99629E07B7300BBEA69 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C60EE99729E07B8600BBEA69 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C60EE99829E07BC800BBEA69 /* EnumSegue.swift */,
+				C60EE99929E07BC800BBEA69 /* Toast.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C60EE97729E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60EE98F29E07AAB00BBEA69 /* Build configuration list for PBXNativeTarget "FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573" */;
+			buildPhases = (
+				C60EE97429E07AA800BBEA69 /* Sources */,
+				C60EE97529E07AA800BBEA69 /* Frameworks */,
+				C60EE97629E07AA800BBEA69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573;
+			productName = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573;
+			productReference = C60EE97829E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C60EE97029E07AA800BBEA69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					C60EE97729E07AA800BBEA69 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C60EE97329E07AA800BBEA69 /* Build configuration list for PBXProject "FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C60EE96F29E07AA800BBEA69;
+			productRefGroup = C60EE97929E07AA800BBEA69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C60EE97729E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C60EE97629E07AA800BBEA69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60EE98B29E07AAB00BBEA69 /* LaunchScreen.storyboard in Resources */,
+				C60EE98829E07AAB00BBEA69 /* Assets.xcassets in Resources */,
+				C60EE98329E07AA800BBEA69 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C60EE97429E07AA800BBEA69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60EE98029E07AA800BBEA69 /* ViewController.swift in Sources */,
+				C60EE9A129E0842300BBEA69 /* HolidaysDetailsViewController.swift in Sources */,
+				C60EE99B29E07BC800BBEA69 /* Toast.swift in Sources */,
+				C60EE99F29E07D7E00BBEA69 /* SignUpViewController.swift in Sources */,
+				C60EE99E29E07D7E00BBEA69 /* SearchHolidaysViewController.swift in Sources */,
+				C60EE98629E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld in Sources */,
+				C60EE97C29E07AA800BBEA69 /* AppDelegate.swift in Sources */,
+				C60EE97E29E07AA800BBEA69 /* SceneDelegate.swift in Sources */,
+				C60EE99A29E07BC800BBEA69 /* EnumSegue.swift in Sources */,
+				C60EE9A329E0846800BBEA69 /* HolidaysViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C60EE98129E07AA800BBEA69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C60EE98229E07AA800BBEA69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C60EE98929E07AAB00BBEA69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C60EE98A29E07AAB00BBEA69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C60EE98D29E07AAB00BBEA69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C60EE98E29E07AAB00BBEA69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C60EE99029E07AAB00BBEA69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N249YN68Z7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "souza.de.soares.thiago.FinalPrjPublicHolidaysAPI-CoreData-CustomizedCells-2210573";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C60EE99129E07AAB00BBEA69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N249YN68Z7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "souza.de.soares.thiago.FinalPrjPublicHolidaysAPI-CoreData-CustomizedCells-2210573";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C60EE97329E07AA800BBEA69 /* Build configuration list for PBXProject "FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60EE98D29E07AAB00BBEA69 /* Debug */,
+				C60EE98E29E07AAB00BBEA69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60EE98F29E07AAB00BBEA69 /* Build configuration list for PBXNativeTarget "FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60EE99029E07AAB00BBEA69 /* Debug */,
+				C60EE99129E07AAB00BBEA69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C60EE98429E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C60EE98529E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodel */,
+			);
+			currentVersion = C60EE98529E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodel */;
+			path = FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C60EE97029E07AA800BBEA69 /* Project object */;
+}
