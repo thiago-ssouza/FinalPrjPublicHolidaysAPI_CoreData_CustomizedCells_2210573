@@ -229,7 +229,9 @@
                         <viewLayoutGuide key="safeArea" id="TEz-w2-oIQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Holidays" id="YRs-hV-KvL"/>
+                    <navigationItem key="navigationItem" title="Holidays" id="YRs-hV-KvL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="clear" catalog="system" id="54R-Ys-jG7"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="nWR-CV-iCr" kind="show" identifier="toHolidaysDetailsViewController" id="4vp-xs-R9O"/>
                     </connections>
@@ -357,6 +359,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.plus.fill" catalog="system" width="128" height="113"/>
