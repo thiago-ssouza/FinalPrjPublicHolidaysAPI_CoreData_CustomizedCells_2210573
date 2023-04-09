@@ -9,10 +9,24 @@ import UIKit
 
 class HolidaysViewController: UIViewController {
 
+    public var selectedHolidayCountryList : [Holidays]?
+    public var selectedCountryCode : String?
+    public var selectedYear : String?
+    public var publicHolidays : PublicHolidayRequest?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if(self.selectedHolidayCountryList != nil && self.selectedCountryCode != nil && self.selectedYear != nil){
+            print(self.selectedHolidayCountryList!)
+            print(self.selectedCountryCode!)
+            print(self.selectedYear!)
+            
+            self.publicHolidays?.printHolidaysListCountry(holidays: self.selectedHolidayCountryList)
+        }
+        
+        
     }
     
 

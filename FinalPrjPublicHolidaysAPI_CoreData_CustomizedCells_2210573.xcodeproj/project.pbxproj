@@ -20,6 +20,10 @@
 		C60EE99F29E07D7E00BBEA69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */; };
 		C60EE9A129E0842300BBEA69 /* HolidaysDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE9A029E0842300BBEA69 /* HolidaysDetailsViewController.swift */; };
 		C60EE9A329E0846800BBEA69 /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */; };
+		C67BDA6629E1CD2E009A12B4 /* PublicHolidayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6429E1CD2E009A12B4 /* PublicHolidayModel.swift */; };
+		C67BDA6729E1CD2E009A12B4 /* PublicHolidayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6529E1CD2E009A12B4 /* PublicHolidayRequest.swift */; };
+		C67BDA6929E1D6AF009A12B4 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6829E1D6AF009A12B4 /* CountryProvider.swift */; };
+		C67BDA6B29E1F66F009A12B4 /* YearProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6A29E1F66F009A12B4 /* YearProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C60EE9A029E0842300BBEA69 /* HolidaysDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDetailsViewController.swift; sourceTree = "<group>"; };
 		C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
+		C67BDA6429E1CD2E009A12B4 /* PublicHolidayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicHolidayModel.swift; sourceTree = "<group>"; };
+		C67BDA6529E1CD2E009A12B4 /* PublicHolidayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicHolidayRequest.swift; sourceTree = "<group>"; };
+		C67BDA6829E1D6AF009A12B4 /* CountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProvider.swift; sourceTree = "<group>"; };
+		C67BDA6A29E1F66F009A12B4 /* YearProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 		C60EE99329E07B5000BBEA69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C67BDA6429E1CD2E009A12B4 /* PublicHolidayModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +124,8 @@
 		C60EE99629E07B7300BBEA69 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				C67BDA6829E1D6AF009A12B4 /* CountryProvider.swift */,
+				C67BDA6A29E1F66F009A12B4 /* YearProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -122,6 +133,7 @@
 		C60EE99729E07B8600BBEA69 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C67BDA6529E1CD2E009A12B4 /* PublicHolidayRequest.swift */,
 				C60EE99829E07BC800BBEA69 /* EnumSegue.swift */,
 				C60EE99929E07BC800BBEA69 /* Toast.swift */,
 			);
@@ -202,10 +214,14 @@
 				C60EE98029E07AA800BBEA69 /* ViewController.swift in Sources */,
 				C60EE9A129E0842300BBEA69 /* HolidaysDetailsViewController.swift in Sources */,
 				C60EE99B29E07BC800BBEA69 /* Toast.swift in Sources */,
+				C67BDA6B29E1F66F009A12B4 /* YearProvider.swift in Sources */,
 				C60EE99F29E07D7E00BBEA69 /* SignUpViewController.swift in Sources */,
 				C60EE99E29E07D7E00BBEA69 /* SearchHolidaysViewController.swift in Sources */,
 				C60EE98629E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld in Sources */,
 				C60EE97C29E07AA800BBEA69 /* AppDelegate.swift in Sources */,
+				C67BDA6729E1CD2E009A12B4 /* PublicHolidayRequest.swift in Sources */,
+				C67BDA6929E1D6AF009A12B4 /* CountryProvider.swift in Sources */,
+				C67BDA6629E1CD2E009A12B4 /* PublicHolidayModel.swift in Sources */,
 				C60EE97E29E07AA800BBEA69 /* SceneDelegate.swift in Sources */,
 				C60EE99A29E07BC800BBEA69 /* EnumSegue.swift in Sources */,
 				C60EE9A329E0846800BBEA69 /* HolidaysViewController.swift in Sources */,
