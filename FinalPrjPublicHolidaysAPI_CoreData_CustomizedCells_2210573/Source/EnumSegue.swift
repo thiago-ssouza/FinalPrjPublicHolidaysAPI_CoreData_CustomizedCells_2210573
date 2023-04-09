@@ -15,5 +15,5 @@ enum Segue {
     
     static let toHolidaysViewController = "toHolidaysViewController"
     
-    static let toHolidaysDetailsViewController = "toHolidaysDetailsViewController"
+    static let toHolidayDetailsViewController = "toHolidayDetailsViewController"
 }

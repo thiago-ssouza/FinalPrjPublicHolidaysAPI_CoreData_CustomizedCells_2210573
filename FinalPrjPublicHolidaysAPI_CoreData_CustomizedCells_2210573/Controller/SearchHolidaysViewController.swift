@@ -9,15 +9,15 @@ import UIKit
 
 class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    var publicHolidays : PublicHolidayRequest?
-    var selectedHolidayCountryList : [Holidays]? = []
+    private var publicHolidays : PublicHolidayRequest?
+    private var selectedHolidayCountryList : [Holiday]? = []
     
-    var selectedCountryCode : String?
-    var selectedCountryName : String?
-    var selectedYear : String?
+    private var selectedCountryCode : String?
+    private var selectedCountryName : String?
+    private var selectedYear : String?
     
-    var countryCodesList = CountryProvider.allCountries.keys
-    var countryNamesList = CountryProvider.allCountries.values
+    private var countryCodesList = CountryProvider.allCountries.keys
+    private var countryNamesList = CountryProvider.allCountries.values
     
     @IBOutlet weak var pickerViewYear: UIPickerView!
     
@@ -143,6 +143,7 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
             let holidaysViewController = segue.destination as! HolidaysViewController
             
             holidaysViewController.selectedCountryCode = self.selectedCountryCode
+            holidaysViewController.selectedCountryName = self.selectedCountryName
             holidaysViewController.selectedYear = self.selectedYear
             
             self.selectedHolidayCountryList = publicHolidays!.getPublicHolidaysList(countryCode: self.selectedCountryCode!, year: self.selectedYear!)

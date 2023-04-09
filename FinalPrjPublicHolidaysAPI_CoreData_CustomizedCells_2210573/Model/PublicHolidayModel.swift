@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Holidays:Decodable {
+struct Holiday:Decodable {
     var date:String
     var localName:String
     var name:String

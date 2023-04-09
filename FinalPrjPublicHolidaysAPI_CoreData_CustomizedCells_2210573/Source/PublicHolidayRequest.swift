@@ -14,7 +14,7 @@ class PublicHolidayRequest {
         "X-RapidAPI-Host": "public-holiday.p.rapidapi.com"
     ]
     
-    func getPublicHolidays(countryCode:String, year:String, completion: @escaping ([Holidays]) -> Void){
+    func getPublicHolidays(countryCode:String, year:String, completion: @escaping ([Holiday]) -> Void){
         
 
         let request = NSMutableURLRequest(url: NSURL(string: "https://public-holiday.p.rapidapi.com/\(year)/\(countryCode)")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0);
@@ -42,7 +42,7 @@ class PublicHolidayRequest {
                 
                 do{
                     let decoder = JSONDecoder()
-                    let holidays = try decoder.decode([Holidays] .self, from: jsonData)
+                    let holidays = try decoder.decode([Holiday] .self, from: jsonData)
                     completion(holidays)
                 } catch {
                     print("Error: \(error)")
@@ -54,9 +54,9 @@ class PublicHolidayRequest {
         dataTask.resume()
     }
     
-    func getPublicHolidaysList(countryCode:String, year:String) -> [Holidays] {
+    func getPublicHolidaysList(countryCode:String, year:String) -> [Holiday] {
         
-        var holidays = [Holidays]()
+        var holidays = [Holiday]()
         let semaphore = DispatchSemaphore(value: 0)
         
         getPublicHolidays(countryCode: countryCode, year: year) { resultHolidays in
@@ -70,7 +70,7 @@ class PublicHolidayRequest {
         
     }
     
-    func printHolidaysListCountry(holidays : [Holidays]!) {
+    func printHolidaysListCountry(holidays : [Holiday]!) {
         
         if(holidays != nil) {
             var count = 0
