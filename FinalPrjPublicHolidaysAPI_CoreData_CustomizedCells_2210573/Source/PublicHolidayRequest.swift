@@ -1,20 +1,20 @@
 //
 //  PublicHoliday.swift
-//  ReadApiPublicHolidays
+//  FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573
 //
-//  Created by macOSBigSur on 2023-04-07.
+//  Created by Thiago Soares de Souza on 2023-04-07.
 //
 
 import Foundation
 
 class PublicHolidayRequest {
     
-    let headers = [
+    private let headers = [
         "X-RapidAPI-Key": "da3c475555mshd9434b7c0ca03ddp15225bjsnc520d260d39f",
         "X-RapidAPI-Host": "public-holiday.p.rapidapi.com"
     ]
     
-    func getPublicHolidays(countryCode:String, year:String, completion: @escaping ([Holiday]) -> Void){
+    private func getPublicHolidays(countryCode:String, year:String, completion: @escaping ([Holiday]) -> Void){
         
 
         let request = NSMutableURLRequest(url: NSURL(string: "https://public-holiday.p.rapidapi.com/\(year)/\(countryCode)")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0);
@@ -66,8 +66,36 @@ class PublicHolidayRequest {
         
         semaphore.wait()
         
-        return holidays
+        return removeDuplicateHoliday(holidays: holidays)
         
+        //return holidays
+        
+    }
+    
+    private func removeDuplicateHoliday(holidays : [Holiday]!) -> [Holiday] {
+        
+        var holidaysRemovedDuplicates : [Holiday] = []
+        holidaysRemovedDuplicates.append(holidays[0])
+        
+        for index in 1..<holidays.count {
+            let previousIndex = index - 1;
+            if  ( (holidays[previousIndex].date == holidays[index].date) && (holidays[previousIndex].name == holidays[index].name) && (holidays[previousIndex].localName == holidays[index].localName) ) {
+                if holidaysRemovedDuplicates[previousIndex].counties == nil {
+                    holidaysRemovedDuplicates[previousIndex].counties = []
+                }
+                
+                for provinceState in holidays[index].counties! {
+                    holidaysRemovedDuplicates[previousIndex].counties!.append("\(provinceState) (\(holidays[index].type))")
+                }
+                
+                continue
+                
+            }
+            
+            holidaysRemovedDuplicates.append(holidays[index])
+        }
+        
+        return holidaysRemovedDuplicates
     }
     
     func printHolidaysListCountry(holidays : [Holiday]!) {

@@ -1,8 +1,8 @@
 //
 //  PublicHolidayModel.swift
-//  ReadApiPublicHolidays
+//  FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573
 //
-//  Created by macOSBigSur on 2023-04-07.
+//  Created by Thiago Soares de Souza on 2023-04-07.
 //
 
 import Foundation

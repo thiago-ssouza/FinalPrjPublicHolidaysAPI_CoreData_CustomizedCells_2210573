@@ -17,14 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-5D-8v3">
-                        <rect key="frame" x="20" y="15" width="107" height="32"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-5D-8v3">
+                        <rect key="frame" x="20" y="15" width="310" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-01-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajr-BO-MSQ">
-                        <rect key="frame" x="20" y="61" width="106" height="24"/>
+                        <rect key="frame" x="20" y="63" width="106" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" systemColor="systemGray5Color"/>
                         <nil key="highlightedColor"/>
@@ -32,12 +32,11 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                 <constraints>
-                    <constraint firstItem="ajr-BO-MSQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Efp-me-r9F"/>
-                    <constraint firstItem="V2R-5D-8v3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Fee-Be-9ml"/>
-                    <constraint firstItem="V2R-5D-8v3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="GWK-VJ-HwY"/>
-                    <constraint firstItem="V2R-5D-8v3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="K0w-cb-yKQ"/>
-                    <constraint firstItem="ajr-BO-MSQ" firstAttribute="top" secondItem="V2R-5D-8v3" secondAttribute="bottom" constant="14" id="gSm-3a-CfF"/>
-                    <constraint firstItem="V2R-5D-8v3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="ko5-1X-0XY"/>
+                    <constraint firstItem="ajr-BO-MSQ" firstAttribute="top" secondItem="V2R-5D-8v3" secondAttribute="bottom" constant="16" id="1NU-j8-gor"/>
+                    <constraint firstAttribute="trailing" secondItem="V2R-5D-8v3" secondAttribute="trailing" constant="20" id="4SE-8N-Cow"/>
+                    <constraint firstItem="V2R-5D-8v3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="FPi-i9-R4u"/>
+                    <constraint firstItem="V2R-5D-8v3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bo3-t0-Gec"/>
+                    <constraint firstItem="ajr-BO-MSQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="edT-Xv-agf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
