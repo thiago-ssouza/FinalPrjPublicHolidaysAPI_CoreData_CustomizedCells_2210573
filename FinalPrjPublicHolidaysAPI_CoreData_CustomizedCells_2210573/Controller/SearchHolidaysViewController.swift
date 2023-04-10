@@ -9,6 +9,8 @@ import UIKit
 
 class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    internal var loggedUser : User?
+    
     private var publicHolidays : PublicHolidayRequest?
     private var selectedHolidayCountryList : [Holiday]? = []
     
@@ -23,11 +25,14 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     @IBOutlet weak var txtCountryCode: UITextField!
     
-        
+    @IBOutlet weak var btnSearch: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        btnSearch.layer.cornerRadius = 15
         
         pickerViewYear.dataSource = self
         pickerViewYear.delegate = self

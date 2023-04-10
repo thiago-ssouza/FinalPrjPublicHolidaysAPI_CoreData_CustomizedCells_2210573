@@ -46,6 +46,9 @@
                                 <rect key="frame" x="368" y="590" width="26" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="btnEyeShowHidePasswordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LCQ-QS-4RD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZa-zO-gYc">
                                 <rect key="frame" x="20" y="696.5" width="374" height="59"/>
@@ -79,7 +82,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="gub-M7-sJG"/>
+                    <navigationItem key="navigationItem" title="Login" id="gub-M7-sJG">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="icF-ZU-jjX">
+                            <connections>
+                                <segue destination="kbt-pL-pnU" kind="show" identifier="toManageUserViewController" id="VSM-1q-u7N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnEyeShowHidePassword" destination="oqh-KJ-rlO" id="GZG-jI-UCl"/>
+                        <outlet property="btnLogin" destination="lZa-zO-gYc" id="nix-9e-lzX"/>
+                        <outlet property="btnSignUp" destination="VcT-XE-F7K" id="ZjV-3s-aHz"/>
+                        <outlet property="txtPassword" destination="f6I-k2-d2k" id="vBP-oo-CaG"/>
+                        <outlet property="txtUsername" destination="LlB-dw-Pcm" id="EAt-Xq-wv2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +139,9 @@
                                 <rect key="frame" x="368" y="680" width="26" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="btnEyeShowHidePasswordTouchUpInside:" destination="KPv-nY-KXk" eventType="touchUpInside" id="KUG-37-o1w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTc-Pb-Yc8">
                                 <rect key="frame" x="20" y="764" width="374" height="59"/>
@@ -132,6 +151,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnRegisterTouchUpInside:" destination="KPv-nY-KXk" eventType="touchUpInside" id="SEi-cd-kVl"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-IH-C5o">
                                 <rect key="frame" x="20" y="88" width="374" height="332"/>
@@ -155,10 +177,94 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="SingUp" id="Ker-x0-tb2"/>
+                    <connections>
+                        <outlet property="btnEyeShowHidePassword" destination="YFR-6U-ctL" id="GMC-1N-7PI"/>
+                        <outlet property="btnRegister" destination="kTc-Pb-Yc8" id="nHL-8c-HDw"/>
+                        <outlet property="txtName" destination="5t6-pb-aUe" id="b6e-Rc-AOG"/>
+                        <outlet property="txtPassword" destination="20n-0f-wqW" id="ABV-IO-noa"/>
+                        <outlet property="txtUsername" destination="IH3-3g-9hp" id="twG-sG-Vkf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydF-dS-cGK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="790"/>
+        </scene>
+        <!--Manage User-->
+        <scene sceneID="k5j-Mc-lUs">
+            <objects>
+                <viewController id="kbt-pL-pnU" customClass="ManageUserViewController" customModule="FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="deo-vf-2m6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ox-Vp-t6p">
+                                <rect key="frame" x="20" y="466" width="99" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoL-ay-vaz">
+                                <rect key="frame" x="20" y="502" width="374" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkY-nl-IRZ">
+                                <rect key="frame" x="20" y="652" width="96" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ypR-vz-P4Z">
+                                <rect key="frame" x="20" y="688" width="337" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKu-vx-0x9">
+                                <rect key="frame" x="368" y="695" width="26" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="eye" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yna-WW-uzo">
+                                <rect key="frame" x="20" y="779" width="374" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EBV-nV-MwP">
+                                <rect key="frame" x="20" y="103" width="374" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-5G-YkJ">
+                                <rect key="frame" x="20" y="558" width="103" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqM-nB-0vB">
+                                <rect key="frame" x="20" y="594" width="374" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="388-za-2Bn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Manage User" id="8x8-rd-EDh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="checkmark" catalog="system" id="ZFd-4z-ZJ2"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBQ-eZ-SsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="-235"/>
         </scene>
         <!--Search Holidays-->
         <scene sceneID="ScD-Op-sVW">
@@ -214,13 +320,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search Holidays" id="X9v-pB-ihN"/>
                     <connections>
+                        <outlet property="btnSearch" destination="Vks-C3-bxq" id="VLQ-bd-OwE"/>
                         <outlet property="pickerViewYear" destination="UZJ-5u-NEo" id="hQ9-9b-xaG"/>
                         <outlet property="txtCountryCode" destination="gqW-yV-eaj" id="WZE-XX-9iN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ca4-gi-BZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="100"/>
+            <point key="canvasLocation" x="1661" y="453"/>
         </scene>
         <!--Holidays-->
         <scene sceneID="1d6-TK-OWl">
@@ -264,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuz-aI-fuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2389.8550724637685" y="99.776785714285708"/>
+            <point key="canvasLocation" x="2393" y="453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X6z-QE-w0Y">
@@ -400,13 +507,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dr1-do-wzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137.68115942029" y="99.776785714285708"/>
+            <point key="canvasLocation" x="3141" y="453"/>
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="person.crop.circle.badge.plus.fill" catalog="system" width="128" height="113"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
@@ -414,6 +523,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

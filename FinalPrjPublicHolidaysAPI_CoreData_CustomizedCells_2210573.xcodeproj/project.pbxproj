@@ -20,6 +20,9 @@
 		C60EE99F29E07D7E00BBEA69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */; };
 		C60EE9A129E0842300BBEA69 /* HolidayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE9A029E0842300BBEA69 /* HolidayDetailsViewController.swift */; };
 		C60EE9A329E0846800BBEA69 /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */; };
+		C656337829E4793D00A2B3C9 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C656337729E4793D00A2B3C9 /* CoreDataProvider.swift */; };
+		C656337A29E480EA00A2B3C9 /* UserModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C656337929E480EA00A2B3C9 /* UserModelExtension.swift */; };
+		C656337C29E4B03D00A2B3C9 /* ManageUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C656337B29E4B03D00A2B3C9 /* ManageUserViewController.swift */; };
 		C67BDA6629E1CD2E009A12B4 /* PublicHolidayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6429E1CD2E009A12B4 /* PublicHolidayModel.swift */; };
 		C67BDA6729E1CD2E009A12B4 /* PublicHolidayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6529E1CD2E009A12B4 /* PublicHolidayRequest.swift */; };
 		C67BDA6929E1D6AF009A12B4 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67BDA6829E1D6AF009A12B4 /* CountryProvider.swift */; };
@@ -44,6 +47,9 @@
 		C60EE99D29E07D7E00BBEA69 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C60EE9A029E0842300BBEA69 /* HolidayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDetailsViewController.swift; sourceTree = "<group>"; };
 		C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
+		C656337729E4793D00A2B3C9 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		C656337929E480EA00A2B3C9 /* UserModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelExtension.swift; sourceTree = "<group>"; };
+		C656337B29E4B03D00A2B3C9 /* ManageUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUserViewController.swift; sourceTree = "<group>"; };
 		C67BDA6429E1CD2E009A12B4 /* PublicHolidayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicHolidayModel.swift; sourceTree = "<group>"; };
 		C67BDA6529E1CD2E009A12B4 /* PublicHolidayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicHolidayRequest.swift; sourceTree = "<group>"; };
 		C67BDA6829E1D6AF009A12B4 /* CountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProvider.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				C67BDA6429E1CD2E009A12B4 /* PublicHolidayModel.swift */,
+				C656337929E480EA00A2B3C9 /* UserModelExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 				C60EE9A029E0842300BBEA69 /* HolidayDetailsViewController.swift */,
 				C60EE9A229E0846800BBEA69 /* HolidaysViewController.swift */,
 				C67BDA6C29E2C5C6009A12B4 /* PublicHolidayTableViewCell.swift */,
+				C656337B29E4B03D00A2B3C9 /* ManageUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			children = (
 				C67BDA6829E1D6AF009A12B4 /* CountryProvider.swift */,
 				C67BDA6A29E1F66F009A12B4 /* YearProvider.swift */,
+				C656337729E4793D00A2B3C9 /* CoreDataProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C656337A29E480EA00A2B3C9 /* UserModelExtension.swift in Sources */,
 				C67BDA6E29E2C5C6009A12B4 /* PublicHolidayTableViewCell.swift in Sources */,
 				C60EE98029E07AA800BBEA69 /* ViewController.swift in Sources */,
 				C60EE9A129E0842300BBEA69 /* HolidayDetailsViewController.swift in Sources */,
@@ -225,6 +235,7 @@
 				C67BDA6B29E1F66F009A12B4 /* YearProvider.swift in Sources */,
 				C60EE99F29E07D7E00BBEA69 /* SignUpViewController.swift in Sources */,
 				C60EE99E29E07D7E00BBEA69 /* SearchHolidaysViewController.swift in Sources */,
+				C656337C29E4B03D00A2B3C9 /* ManageUserViewController.swift in Sources */,
 				C60EE98629E07AA800BBEA69 /* FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573.xcdatamodeld in Sources */,
 				C60EE97C29E07AA800BBEA69 /* AppDelegate.swift in Sources */,
 				C67BDA6729E1CD2E009A12B4 /* PublicHolidayRequest.swift in Sources */,
@@ -233,6 +244,7 @@
 				C60EE97E29E07AA800BBEA69 /* SceneDelegate.swift in Sources */,
 				C60EE99A29E07BC800BBEA69 /* EnumSegue.swift in Sources */,
 				C60EE9A329E0846800BBEA69 /* HolidaysViewController.swift in Sources */,
+				C656337829E4793D00A2B3C9 /* CoreDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

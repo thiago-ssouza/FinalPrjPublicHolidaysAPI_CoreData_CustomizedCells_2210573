@@ -9,9 +9,11 @@ import Foundation
 
 enum Segue {
     
-    static let toSearchHolidaysViewController = "toSearchHolidaysViewController"
-    
     static let toSignUpViewController = "toSignUpViewController"
+    
+    static let toManageUserViewController = "toManageUserViewController"
+    
+    static let toSearchHolidaysViewController = "toSearchHolidaysViewController"
     
     static let toHolidaysViewController = "toHolidaysViewController"
     
