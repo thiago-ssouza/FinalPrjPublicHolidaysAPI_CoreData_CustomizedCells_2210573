@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
     internal var loggedUser : User?
     
@@ -18,12 +18,18 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
     private var selectedCountryName : String?
     private var selectedYear : String?
     
-    private var countryCodesList = CountryProvider.allCountries.keys
-    private var countryNamesList = CountryProvider.allCountries.values
+//    private var countryCodesList = CountryProvider.allCountries.keys
+//    private var countryNamesList = CountryProvider.allCountries.values
+    
+    private var countryCodeCountryNameList : [(countryCode:String, countryName:String)]?
     
     @IBOutlet weak var pickerViewYear: UIPickerView!
     
     @IBOutlet weak var txtCountryCode: UITextField!
+    
+    @IBOutlet weak var btnSwitch: UISwitch!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var btnSearch: UIButton!
     
@@ -37,11 +43,18 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
         pickerViewYear.dataSource = self
         pickerViewYear.delegate = self
         txtCountryCode.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
         
         publicHolidays = PublicHolidayRequest()
         pickerViewYear.selectRow(0, inComponent: 0, animated: false)
         
         selectedYear = YearProvider.getYearsList()[pickerViewYear.selectedRow(inComponent: 0)]
+
+        btnSwitch.isOn = false
+        tableView.isHidden = true
+        
+        self.countryCodeCountryNameList = CountryProvider.getCountryCodeCountryNameList()
         
         //year = YearProvider.getYearsList()[0]
         
@@ -110,6 +123,26 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
         txtCountryCode.text = (txtCountryCode.text as NSString?)?.replacingCharacters(in: range, with: uppercaseString)
         
         return false
+    }
+    
+    @IBAction func btnSwitchValueChanged(_ sender: Any) {
+        tableView.isHidden.toggle()
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.countryCodeCountryNameList!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        
+        cell.textLabel?.text = "\(self.countryCodeCountryNameList![indexPath.row].countryCode) - \(self.countryCodeCountryNameList![indexPath.row].countryName)"
+        
+        return cell
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

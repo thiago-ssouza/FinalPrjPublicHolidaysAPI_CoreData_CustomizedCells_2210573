@@ -66,9 +66,9 @@ class PublicHolidayRequest {
         
         semaphore.wait()
         
-        return removeDuplicateHoliday(holidays: holidays)
+        //return removeDuplicateHoliday(holidays: holidays)
         
-        //return holidays
+        return holidays
         
     }
     
