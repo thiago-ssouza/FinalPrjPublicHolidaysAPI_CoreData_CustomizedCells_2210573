@@ -43,6 +43,10 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
 //            print(holiday)
 //        }
         
+//        if(self.selectedHolidayCountryList != nil) {
+//            publicHolidays!.printHolidaysListCountry(holidays: self.selectedHolidayCountryList!)
+//        }
+        
         initialize()
         
         

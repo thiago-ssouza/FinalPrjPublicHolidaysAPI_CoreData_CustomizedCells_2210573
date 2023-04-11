@@ -66,9 +66,9 @@ class PublicHolidayRequest {
         
         semaphore.wait()
         
-        //return removeDuplicateHoliday(holidays: holidays)
+        return removeDuplicateHoliday(holidays: holidays)
         
-        return holidays
+        //return holidays
         
     }
     
@@ -84,8 +84,10 @@ class PublicHolidayRequest {
                     holidaysRemovedDuplicates[previousIndex].counties = []
                 }
                 
-                for provinceState in holidays[index].counties! {
-                    holidaysRemovedDuplicates[previousIndex].counties!.append("\(provinceState) (\(holidays[index].type))")
+                if holidays[index].counties != nil {
+                    for provinceState in holidays[index].counties! {
+                        holidaysRemovedDuplicates[previousIndex].counties!.append("\(provinceState) (\(holidays[index].type))")
+                    }
                 }
                 
                 continue
