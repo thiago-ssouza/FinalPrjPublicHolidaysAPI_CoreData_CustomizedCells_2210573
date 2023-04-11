@@ -83,11 +83,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="gub-M7-sJG">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="icF-ZU-jjX">
-                            <connections>
-                                <segue destination="kbt-pL-pnU" kind="show" identifier="toManageUserViewController" id="VSM-1q-u7N"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="icF-ZU-jjX">
+                                <connections>
+                                    <segue destination="kbt-pL-pnU" kind="show" identifier="toManageUserViewController" id="VSM-1q-u7N"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Username List" image="list.star" catalog="system" id="8nX-8c-IS9">
+                                <connections>
+                                    <segue destination="hQA-Cc-Mun" kind="show" id="1tg-vU-lcB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="btnEyeShowHidePassword" destination="oqh-KJ-rlO" id="GZG-jI-UCl"/>
@@ -189,6 +196,49 @@
             </objects>
             <point key="canvasLocation" x="880" y="790"/>
         </scene>
+        <!--User Registered List-->
+        <scene sceneID="2oC-dH-M6k">
+            <objects>
+                <viewController id="hQA-Cc-Mun" customClass="UserRegisteredListViewController" customModule="FinalPrjPublicHolidaysAPI_CoreData_CustomizedCells_2210573" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fBA-4n-Sv2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wk9-8g-DY6">
+                                <rect key="frame" x="0.0" y="145" width="414" height="717"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="gqO-qE-LO5">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gqO-qE-LO5" id="Kg5-Dv-Clj">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List of username registered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OH-2j-l2P">
+                                <rect key="frame" x="20" y="101" width="374" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L4v-W7-Ylv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Registered List" id="IzH-rz-mTa"/>
+                    <connections>
+                        <outlet property="tableView" destination="wk9-8g-DY6" id="lNq-uv-VJT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ar-wW-if6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="-880.58035714285711"/>
+        </scene>
         <!--Manage User-->
         <scene sceneID="k5j-Mc-lUs">
             <objects>
@@ -227,6 +277,9 @@
                                 <rect key="frame" x="368" y="695" width="26" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="btnEyeShowHidePasswordTouchUpInside:" destination="kbt-pL-pnU" eventType="touchUpInside" id="Nu8-HZ-QRm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yna-WW-uzo">
                                 <rect key="frame" x="20" y="779" width="374" height="59"/>
@@ -236,8 +289,11 @@
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnDeleteTouchUpInside:" destination="kbt-pL-pnU" eventType="touchUpInside" id="zW3-q1-RJD"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EBV-nV-MwP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.text.rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EBV-nV-MwP">
                                 <rect key="frame" x="20" y="103" width="374" height="332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -259,12 +315,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Manage User" id="8x8-rd-EDh">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="checkmark" catalog="system" id="ZFd-4z-ZJ2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="checkmark" catalog="system" id="ZFd-4z-ZJ2">
+                            <connections>
+                                <action selector="btnSaveTapped:" destination="kbt-pL-pnU" id="nhq-JX-rW0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnDelete" destination="yna-WW-uzo" id="vAg-N4-1dj"/>
+                        <outlet property="btnEyeShowHidePassword" destination="ZKu-vx-0x9" id="P1E-sw-5rk"/>
+                        <outlet property="txtName" destination="BoL-ay-vaz" id="IP0-Bl-1n0"/>
+                        <outlet property="txtPassword" destination="ypR-vz-P4Z" id="SvA-qg-cA7"/>
+                        <outlet property="txtUsername" destination="zqM-nB-0vB" id="kbV-gN-LaR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBQ-eZ-SsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="-235"/>
+            <point key="canvasLocation" x="1846" y="-202"/>
         </scene>
         <!--Search Holidays-->
         <scene sceneID="ScD-Op-sVW">
@@ -327,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ca4-gi-BZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="453"/>
+            <point key="canvasLocation" x="1845" y="476"/>
         </scene>
         <!--Holidays-->
         <scene sceneID="1d6-TK-OWl">
@@ -371,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuz-aI-fuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="453"/>
+            <point key="canvasLocation" x="2577" y="476"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X6z-QE-w0Y">
@@ -507,7 +574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dr1-do-wzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="453"/>
+            <point key="canvasLocation" x="3325" y="475"/>
         </scene>
     </scenes>
     <resources>
@@ -515,9 +582,11 @@
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
+        <image name="list.star" catalog="system" width="128" height="94"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="person.crop.circle.badge.plus.fill" catalog="system" width="128" height="113"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.text.rectangle.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         
-        if identifier == Segue.toSearchHolidaysViewController {
+        if ( identifier == Segue.toSearchHolidaysViewController || identifier == Segue.toManageUserViewController ) {
             
             guard let username = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(), (username.count >= User.USERNAME_MIN_LENGTH && username.count <= User.USERNAME_MAX_LENGTH) else {
 
@@ -102,6 +102,14 @@ class ViewController: UIViewController {
             let searchHolidaysViewController = segue.destination as! SearchHolidaysViewController
             
             searchHolidaysViewController.loggedUser = self.loggedUser
+            
+        }
+        
+        if segue.identifier == Segue.toManageUserViewController {
+            
+            let manageUserViewController = segue.destination as! ManageUserViewController
+            
+            manageUserViewController.loggedUser = self.loggedUser
             
         }
         
