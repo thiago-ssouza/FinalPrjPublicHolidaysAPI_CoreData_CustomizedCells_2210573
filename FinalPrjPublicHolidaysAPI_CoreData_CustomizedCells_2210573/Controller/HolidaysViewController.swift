@@ -15,10 +15,13 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
     public var selectedYear : String?
     public var publicHolidays : PublicHolidayRequest?
     private var selectedHoliday : Holiday?
+    internal var selectedCountryImg : String?
     
     
     
     @IBOutlet weak var txtCountryYearTitleHolidays: UILabel!
+    
+    @IBOutlet weak var imgCountryFlag: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,8 +57,9 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
     
     private func initialize() {
         
-        if ( self.selectedCountryCode != nil && self.selectedCountryName != nil && self.selectedYear != nil ) {
+        if ( self.selectedCountryCode != nil && self.selectedCountryName != nil && self.selectedYear != nil && self.selectedCountryImg != nil ) {
             txtCountryYearTitleHolidays.text = "\(self.selectedCountryCode!) - \(self.selectedCountryName!) (\(self.selectedYear!))"
+            imgCountryFlag.image = UIImage.init(named: self.selectedCountryImg!)
         }
         
         tableView.register(UINib.init(nibName: PublicHolidayTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PublicHolidayTableViewCell.identifier)
@@ -96,6 +100,7 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
             
             holidayDetailsViewController.selectedCountryName = self.selectedCountryName
             holidayDetailsViewController.selectedHoliday = self.selectedHoliday
+            holidayDetailsViewController.selectedCountryImg = self.selectedCountryImg
             
         }
     }

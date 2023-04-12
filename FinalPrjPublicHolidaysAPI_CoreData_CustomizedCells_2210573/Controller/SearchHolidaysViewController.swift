@@ -17,6 +17,7 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
     private var selectedCountryCode : String?
     private var selectedCountryName : String?
     private var selectedYear : String?
+    private var selectedCountryImg : String?
     
 //    private var countryCodesList = CountryProvider.allCountries.keys
 //    private var countryNamesList = CountryProvider.allCountries.values
@@ -55,6 +56,9 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
         tableView.isHidden = true
         
         self.countryCodeCountryNameList = CountryProvider.getCountryCodeCountryNameList()
+        
+        /// order ascending the array of tuples, using the country code
+        self.countryCodeCountryNameList = self.countryCodeCountryNameList!.sorted(by: { $0.0 < $1.0 })
         
         //year = YearProvider.getYearsList()[0]
         
@@ -159,6 +163,8 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
                 self.selectedCountryCode = countryCodeNameTuple.countryCode
                 self.selectedCountryName = countryCodeNameTuple.countryName
                 
+                self.selectedCountryImg = "\(self.selectedCountryCode!)-\(self.selectedCountryName!).png";
+                
 //                guard let countryCodeNameTuple = CountryProvider.find(contryCode: self.selectedCountryCode!) else {
 //                    print("Country Code \(self.selectedCountryCode!) does not exist. Select other.")
 //                    return
@@ -188,6 +194,8 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
             
             holidaysViewController.selectedHolidayCountryList = self.selectedHolidayCountryList
             holidaysViewController.publicHolidays = self.publicHolidays
+            
+            holidaysViewController.selectedCountryImg = self.selectedCountryImg
         }
     }
 

@@ -33,6 +33,8 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
     var selectedHoliday : Holiday?
     private var selectedProvincesStates : [String]?
     
+    internal var selectedCountryImg : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,6 +66,10 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
                 tableView.isUserInteractionEnabled = false
                 //print("\nIt is a National holiday for: \(holiday.countryCode)")
             }
+            
+            //imgCountryFlag.image = UIImage.init(named: "\(self.selectedHoliday!.countryCode)-\(self.selectedCountryName!).png")
+            imgCountryFlag.image = UIImage.init(named: self.selectedCountryImg!)
+            
         } else {
             Toast.ok(view: self, title: "Something is wrong!", message: "Sorry something is wrong. Try again later!", handler: nil)
             navigationController?.popViewController(animated: true)
