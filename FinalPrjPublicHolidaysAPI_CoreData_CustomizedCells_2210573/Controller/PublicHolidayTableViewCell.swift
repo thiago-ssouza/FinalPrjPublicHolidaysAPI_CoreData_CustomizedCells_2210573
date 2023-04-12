@@ -15,6 +15,8 @@ class PublicHolidayTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblHolidayDate: UILabel!
     
+    @IBOutlet weak var imgNationalThumbsUpDown: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +31,14 @@ class PublicHolidayTableViewCell: UITableViewCell {
     public func setCellContent(holiday : Holiday) {
         lblHolidayName.text = holiday.name
         lblHolidayDate.text = holiday.date
+        
+        if(holiday.counties == nil || holiday.counties!.count == 0) {
+            imgNationalThumbsUpDown.image = UIImage.init(systemName: "hand.thumbsup.fill")
+            imgNationalThumbsUpDown.tintColor = UIColor.systemGreen
+        }else {
+            imgNationalThumbsUpDown.image = UIImage.init(systemName: "hand.thumbsdown.fill")
+            imgNationalThumbsUpDown.tintColor = UIColor.systemRed
+        }
     }
     
     

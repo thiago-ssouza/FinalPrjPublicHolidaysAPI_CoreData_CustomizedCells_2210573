@@ -51,7 +51,7 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
             txtDate.text = self.selectedHoliday!.date
             
             self.selectedProvincesStates = []
-            if let counties = self.selectedHoliday!.counties {
+            if let counties = self.selectedHoliday!.counties, (counties.count > 0) {
                 txtIsNationalHoliday.text = "No"
                 //tableView.separatorColor = UIColor.systemIndigo
                 //tableView.separatorStyle = .singleLine
