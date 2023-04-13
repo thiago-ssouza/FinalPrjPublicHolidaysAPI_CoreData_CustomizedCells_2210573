@@ -123,27 +123,13 @@ class CountryProvider {
         
     ]
     
-//    /// Find country code and name in dictionary
-//    public static func find(contryCode : String) -> [String : String]? {
-//
-//        for countryCodeElement in CountryCodeProvider.allCountryCodes {
-//            let r = (countryCode: countryCodeElement.key , countryName: countryCodeElement.value)
-//            print("Country Code: \(r.countryCode) Country Name \(r.countryName)")
-//            if countryCodeElement.key.uppercased() == contryCode.uppercased() {
-//                return [countryCodeElement.key : countryCodeElement.value]
-//            }
-//
-//        }
-//        return nil
-//
-//    }
-    
-    /// Find country code and name in dictionary
+    /**
+     * Find country code and name in dictionary
+     */
     public static func find(contryCode : String) -> (countryCode:String , countryName:String)? {
         
         for countryCodeElement in CountryProvider.allCountries {
-//            let r = (countryCode: countryCodeElement.key , countryName: countryCodeElement.value)
-//            print("Country Code: \(r.countryCode) Country Name \(r.countryName)")
+            
             if countryCodeElement.key.uppercased() == contryCode.uppercased() {
                 //return (countryCode: countryCodeElement.key , countryName: countryCodeElement.value)
                 return (countryCodeElement.key , countryCodeElement.value)
@@ -154,6 +140,9 @@ class CountryProvider {
         
     }
     
+    /**
+     * Getting the list of tuples with the country code and country name
+     */
     public static func getCountryCodeCountryNameList() -> [(countryCode:String , countryName:String)]? {
         
         var countryCodeCountryNameList : [(countryCode:String, countryName:String)] = []

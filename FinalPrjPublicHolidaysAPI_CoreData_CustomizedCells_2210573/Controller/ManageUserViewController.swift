@@ -41,6 +41,9 @@ class ManageUserViewController: UIViewController {
         }
     }
     
+    /**
+     * Show or hide the Password for the user consuting
+     */
     @IBAction func btnEyeShowHidePasswordTouchUpInside(_ sender: Any) {
         
         if txtPassword.isSecureTextEntry {
@@ -51,7 +54,9 @@ class ManageUserViewController: UIViewController {
         txtPassword.isSecureTextEntry.toggle()
     }
     
-    
+    /**
+     * Update the user information if the fullname, username and password follow the criterias
+     */
     @IBAction func btnSaveTapped(_ sender: Any) {
         
         guard let name = txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines), (name.count >= User.NAME_MIN_LENGTH && name.count <= User.NAME_MAX_LENGTH) else {
@@ -80,7 +85,6 @@ class ManageUserViewController: UIViewController {
             self.loggedUser!.password = password
             
             if let _ = self.loggedUser!.save(context: context) {
-//                Toast.ok(view: self, title: "User update Confirmation", message: "User \(username) update sucessfull!", handler: nil)
                 navigationController?.popViewController(animated: true)
             } else {
                 Toast.ok(view: self, title: "Something is wrong!", message: "Problem to update the new user \(username)! Try again later!", handler: nil)
@@ -91,11 +95,12 @@ class ManageUserViewController: UIViewController {
         
     }
     
-    
+    /**
+     * Delete the user loggedin when the user click on it
+     */
     @IBAction func btnDeleteTouchUpInside(_ sender: Any) {
         
         if self.loggedUser!.delete(context: context) {
-//                Toast.ok(view: self, title: "User delete Confirmation", message: "User \(username) delete sucessfull!", handler: nil)
             navigationController?.popViewController(animated: true)
         } else {
             Toast.ok(view: self, title: "Something is wrong!", message: "Problem to delete the user \(self.loggedUser!.username!)! Try again later!", handler: nil)

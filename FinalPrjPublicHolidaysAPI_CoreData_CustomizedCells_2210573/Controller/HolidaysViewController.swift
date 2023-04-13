@@ -16,13 +16,9 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
     public var publicHolidays : PublicHolidayRequest?
     private var selectedHoliday : Holiday?
     internal var selectedCountryImg : String?
-    
-    
-    
+
     @IBOutlet weak var txtCountryYearTitleHolidays: UILabel!
-    
     @IBOutlet weak var imgCountryFlag: UIImageView!
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -30,35 +26,19 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
         
-//        if ( self.selectedCountryCode != nil && self.selectedCountryName != nil && self.selectedYear != nil ) {
-//            txtCountryYearTitleHolidays.text = "\(self.selectedCountryCode!) - \(self.selectedCountryName!) (\(self.selectedYear!))"
-//        }
-//
-//        if(self.selectedHolidayCountryList != nil && self.selectedCountryCode != nil && self.selectedYear != nil){
-//            print(self.selectedHolidayCountryList!)
-//            print(self.selectedCountryCode!)
-//            print(self.selectedYear!)
-//
-//            self.publicHolidays!.printHolidaysListCountry(holidays: self.selectedHolidayCountryList!)
-//
-//            let holiday = self.selectedHolidayCountryList![0]
-//            print(type(of: holiday))
-//            print(holiday)
-//        }
-        
-//        if(self.selectedHolidayCountryList != nil) {
-//            publicHolidays!.printHolidaysListCountry(holidays: self.selectedHolidayCountryList!)
-//        }
-        
         initialize()
-        
         
     }
     
+    /**
+     * Initialize the table variables and the tableViewCustomizedCell
+     */
     private func initialize() {
         
         if ( self.selectedCountryCode != nil && self.selectedCountryName != nil && self.selectedYear != nil && self.selectedCountryImg != nil ) {
+            
             txtCountryYearTitleHolidays.text = "\(self.selectedCountryCode!) - \(self.selectedCountryName!) (\(self.selectedYear!))"
+            
             imgCountryFlag.image = UIImage.init(named: self.selectedCountryImg!)
         }
         
@@ -69,10 +49,16 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
  
     }
     
+    /**
+     * Return the total of holiday
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.selectedHolidayCountryList!.count
     }
     
+    /**
+     * User reuseble cell to display all the holidays
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PublicHolidayTableViewCell.identifier, for: indexPath) as! PublicHolidayTableViewCell
@@ -82,6 +68,9 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
+    /**
+     * If the user click on the holiday. Save in the variable the row and perform the segue it to the next View controler HolidayDetailsViewController
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.selectedHoliday = self.selectedHolidayCountryList![indexPath.row]
@@ -92,6 +81,9 @@ class HolidaysViewController: UIViewController, UITableViewDataSource, UITableVi
         return 100
     }
     
+    /**
+     * Set the variable in the view controller HolidayDetailsViewController
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == Segue.toHolidayDetailsViewController {

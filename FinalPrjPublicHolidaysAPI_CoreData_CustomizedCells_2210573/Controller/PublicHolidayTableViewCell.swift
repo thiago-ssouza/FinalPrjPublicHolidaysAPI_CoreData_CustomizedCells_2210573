@@ -28,6 +28,9 @@ class PublicHolidayTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /**
+     * Set the values in the customized cell
+     */
     public func setCellContent(holiday : Holiday) {
         lblHolidayName.text = holiday.name
         lblHolidayDate.text = holiday.date

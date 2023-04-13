@@ -23,10 +23,16 @@ class UserRegisteredListViewController: UIViewController, UITableViewDataSource,
         tableView.delegate = self
     }
     
+    /**
+     * Return the total of username registered
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return User.all(context: context).count
     }
     
+    /**
+     * Show in the tableview all the usernames registered using reusable cells
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

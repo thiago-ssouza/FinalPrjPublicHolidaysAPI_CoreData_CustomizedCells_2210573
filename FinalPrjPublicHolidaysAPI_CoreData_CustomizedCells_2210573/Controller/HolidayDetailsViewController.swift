@@ -10,29 +10,16 @@ import UIKit
 class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var txtCountry: UITextField!
-    
     @IBOutlet weak var txtLocalName: UITextField!
-    
     @IBOutlet weak var txtInternationalName: UITextField!
-    
     @IBOutlet weak var txtDate: UITextField!
-    
     @IBOutlet weak var txtIsNationalHoliday: UITextField!
-    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var imgCountryFlag: UIImageView!
     
-    //var publicHolidays : PublicHolidayRequest?
-    //var selectedHolidayCountryList : [Holiday]? = []
-    
-    //var selectedCountryCode : String?
     var selectedCountryName : String?
-    //var selectedYear : String?
-    
     var selectedHoliday : Holiday?
     private var selectedProvincesStates : [String]?
-    
     internal var selectedCountryImg : String?
     
     override func viewDidLoad() {
@@ -53,10 +40,6 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
             self.selectedProvincesStates = []
             if let counties = self.selectedHoliday!.counties, (counties.count > 0) {
                 txtIsNationalHoliday.text = "No"
-                //tableView.separatorColor = UIColor.systemIndigo
-                //tableView.separatorStyle = .singleLine
-                //tableView.isOpaque = true
-                //print("\nIt is a Province/State holiday for \(holiday.countryCode):")
                 for provinceState in counties {
                     //print("\n\t- \(provinceState)")
                     self.selectedProvincesStates!.append(provinceState)
@@ -64,21 +47,20 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
             }else{
                 txtIsNationalHoliday.text = "Yes"
                 tableView.isUserInteractionEnabled = false
-                //print("\nIt is a National holiday for: \(holiday.countryCode)")
             }
             
-            //imgCountryFlag.image = UIImage.init(named: "\(self.selectedHoliday!.countryCode)-\(self.selectedCountryName!).png")
             imgCountryFlag.image = UIImage.init(named: self.selectedCountryImg!)
             
         } else {
             Toast.ok(view: self, title: "Something is wrong!", message: "Sorry something is wrong. Try again later!", handler: nil)
             navigationController?.popViewController(animated: true)
         }
-        
-        
-        
+  
     }
     
+    /**
+     * Say the number of total elements for the state or province that have this particular holiday
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.selectedProvincesStates!.count
     }
@@ -92,6 +74,9 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
+    /**
+     * Show in the table view when there is no data the message Name of the holiday is a National Holiday
+     */
     func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSections : Int = 0
         

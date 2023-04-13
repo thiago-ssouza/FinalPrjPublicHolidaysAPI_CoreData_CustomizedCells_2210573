@@ -9,17 +9,9 @@ import Foundation
 
 class YearProvider {
     
-    //private var allYears : [String] = []
-
-//    private func getAllYears() -> [String]{
-//        return self.allYears
-//    }
-    
-//    private func setAllYears(years : [String]){
-//        self.allYears = years
-//    }
-    
-    /// Find country code and name in dictionary
+    /**
+     * Generate and return the list of years available
+     */
     public static func getYearsList() -> [String] {
         let startYear : String = "1923"
         

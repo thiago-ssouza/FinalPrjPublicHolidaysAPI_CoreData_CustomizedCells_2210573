@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+/*
+ * Enum of Segues to avoid writting mistakes
+ */
 enum Segue {
     
     static let toSignUpViewController = "toSignUpViewController"

@@ -27,6 +27,9 @@ extension User : CoreDataProviderProtocol {
         return CoreDataProvider.all(context: context, entityName: entityName) as! [User]
     }
     
+    /**
+     * Add, Update user
+     */
     func save(context: NSManagedObjectContext) -> UUID? {
         
         /// the update mode is implicit because the object has already a uuid and the coredata will manage it that should be the same uuid
@@ -42,10 +45,12 @@ extension User : CoreDataProviderProtocol {
         }
     }
     
+    /**
+     * Delete user
+     */
     func delete(context: NSManagedObjectContext) -> Bool {
         
         do {
-            
             // the function delete is a function for the object that receives the object to delete and it is the self (itself) (who is calling)
             let result = try CoreDataProvider.delete(context: context, objectToDelete: self)
             return result
@@ -53,10 +58,10 @@ extension User : CoreDataProviderProtocol {
             return false
         }
     }
-    
-    
-    
-    /// find func returns the user if found or nil if not found
+   
+    /**
+     * Find func returns the user if found or nil if not found
+     */
     static func find(context : NSManagedObjectContext, username : String) -> User? {
         
         //delete in memory
@@ -71,8 +76,4 @@ extension User : CoreDataProviderProtocol {
         return nil
         
     }
-    
-    
-    
-    
 }

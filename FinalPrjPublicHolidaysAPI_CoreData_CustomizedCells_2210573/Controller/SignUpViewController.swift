@@ -31,7 +31,9 @@ class SignUpViewController: UIViewController {
         btnRegister.layer.cornerRadius = 15
         
     }
-    
+    /**
+     * Show or hide the Password for the user consuting
+     */
     @IBAction func btnEyeShowHidePasswordTouchUpInside(_ sender: Any) {
         
         if txtPassword.isSecureTextEntry {
@@ -43,9 +45,10 @@ class SignUpViewController: UIViewController {
         
     }
     
-    
+    /**
+     * Validate all full name, username, and password. If correct and no previous user name is found, register the new user
+     */
     @IBAction func btnRegisterTouchUpInside(_ sender: Any) {
-        
         
         guard let name = txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines), (name.count >= User.NAME_MIN_LENGTH && name.count <= User.NAME_MAX_LENGTH) else {
             
@@ -68,6 +71,7 @@ class SignUpViewController: UIViewController {
 
         }
 
+        /// using core data to validate if the username is already registered exist or not to save the user or return a message "user already exist"
         if User.find(context: context, username: username) == nil {
 
             let newUser = User(context: context)
@@ -76,7 +80,6 @@ class SignUpViewController: UIViewController {
             newUser.password = password
             
             if let _ = newUser.save(context: context) {
-//                Toast.ok(view: self, title: "User Registered Confirmation", message: "User \(username) registered sucessfull!", handler: nil)
                 navigationController?.popViewController(animated: true)
             } else {
                 Toast.ok(view: self, title: "Something is wrong!", message: "Problem to register the new user \(username)! Try again later!", handler: nil)
@@ -87,12 +90,8 @@ class SignUpViewController: UIViewController {
             Toast.ok(view: self, title: "Something is wrong!", message: "Username already exist!", handler: nil)
             return
         }
-               
-        
+
     }
-    
-    
-    
 
     /*
     // MARK: - Navigation

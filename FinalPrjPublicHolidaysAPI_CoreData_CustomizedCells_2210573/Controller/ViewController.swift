@@ -30,10 +30,12 @@ class ViewController: UIViewController {
         
         btnLogin.layer.cornerRadius = 15
         btnSignUp.layer.cornerRadius = 15
-        
-        //UserModelProvider.mockData()
+
     }
     
+    /**
+     * Show or hide the Password for the user consuting
+     */
     @IBAction func btnEyeShowHidePasswordTouchUpInside(_ sender: Any) {
         
         if txtPassword.isSecureTextEntry {
@@ -44,7 +46,9 @@ class ViewController: UIViewController {
         txtPassword.isSecureTextEntry.toggle()
     }
     
-    
+    /**
+     * Validate the username and password to see if matches in the core data to go or not to SearchHolidaysViewController, ManageUserViewController. For the others view controllers it can go directly
+     */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         
@@ -95,6 +99,9 @@ class ViewController: UIViewController {
         
     }
     
+    /**
+     * Set the values in the next SearchHolidaysViewController or ManageUserViewController
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == Segue.toSearchHolidaysViewController {

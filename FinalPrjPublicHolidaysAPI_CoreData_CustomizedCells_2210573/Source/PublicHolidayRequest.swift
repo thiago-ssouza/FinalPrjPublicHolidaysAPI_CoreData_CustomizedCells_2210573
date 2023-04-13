@@ -9,11 +9,17 @@ import Foundation
 
 class PublicHolidayRequest {
     
+    /**
+     * headers from the API to be able to make the request
+     */
     private let headers = [
         "X-RapidAPI-Key": "da3c475555mshd9434b7c0ca03ddp15225bjsnc520d260d39f",
         "X-RapidAPI-Host": "public-holiday.p.rapidapi.com"
     ]
     
+    /**
+     * Fetch data from the API using decoder
+     */
     private func getPublicHolidays(countryCode:String, year:String, completion: @escaping ([Holiday]) -> Void){
         
 
@@ -54,6 +60,9 @@ class PublicHolidayRequest {
         dataTask.resume()
     }
     
+    /**
+     *Returns the list of holidays for the contry and the year selected
+     */
     func getPublicHolidaysList(countryCode:String, year:String) -> [Holiday] {
         
         var holidays = [Holiday]()
@@ -68,10 +77,11 @@ class PublicHolidayRequest {
         
         return removeDuplicateHoliday(holidays: holidays)
         
-        //return holidays
-        
     }
-    
+    /**
+     *Function created to remove duplicated holidays comes from the API when the holiday is optional for some provinces/states and not for others
+     *
+     */
     private func removeDuplicateHoliday(holidays : [Holiday]!) -> [Holiday] {
         
         var holidaysRemovedDuplicates : [Holiday] = []
@@ -134,40 +144,6 @@ class PublicHolidayRequest {
         } else {
             print("Data is emplty, try again later!")
         }
-        
-        
-//        if(self.holidays != nil) {
-//            var count = 0
-//
-//
-//            for holiday in self.holidays! {
-//                print("\nHoliday \(count+1)")
-//                print("\nDate: \(holiday.date)")
-//                print("\nLocal Name: \(holiday.localName)")
-//                print("\nInternational Name: \(holiday.name)")
-//                print("\nCountry Code: \(holiday.countryCode)")
-//                print("\nFixed: \(holiday.fixed)")
-//                print("\nGlobal: \(holiday.global)")
-//                if let counties = holiday.counties {
-//                    print("\nIt is a Province/State holiday for \(holiday.countryCode):")
-//                    for provinceState in counties {
-//                        print("\n\t- \(provinceState)")
-//                    }
-//                } else {
-//                    print("\nIt is a National holiday for: \(holiday.countryCode)")
-//                }
-//                if holiday.launchYear != nil {
-//                    print("\nLaunch Year: \(holiday.launchYear!)")
-//                } else {
-//                    print("\nLaunch Year: Unknow")
-//                }
-//                print("\nHoliday Type: \(holiday.type)")
-//                print("\n*********************************")
-//                count += 1
-//            }
-//        } else {
-//            print("Data is emplty, try again later!")
-//        }
         
     }
     

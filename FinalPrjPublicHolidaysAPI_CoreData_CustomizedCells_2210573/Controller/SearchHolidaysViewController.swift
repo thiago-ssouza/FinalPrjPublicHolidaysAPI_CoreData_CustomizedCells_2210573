@@ -10,28 +10,18 @@ import UIKit
 class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
     internal var loggedUser : User?
-    
     private var publicHolidays : PublicHolidayRequest?
     private var selectedHolidayCountryList : [Holiday]? = []
-    
     private var selectedCountryCode : String?
     private var selectedCountryName : String?
     private var selectedYear : String?
     private var selectedCountryImg : String?
-    
-//    private var countryCodesList = CountryProvider.allCountries.keys
-//    private var countryNamesList = CountryProvider.allCountries.values
-    
     private var countryCodeCountryNameList : [(countryCode:String, countryName:String)]?
     
     @IBOutlet weak var pickerViewYear: UIPickerView!
-    
     @IBOutlet weak var txtCountryCode: UITextField!
-    
     @IBOutlet weak var btnSwitch: UISwitch!
-    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var btnSearch: UIButton!
     
     override func viewDidLoad() {
@@ -40,72 +30,57 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Do any additional setup after loading the view.
         
         btnSearch.layer.cornerRadius = 15
-        
         pickerViewYear.dataSource = self
         pickerViewYear.delegate = self
         txtCountryCode.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
-        
+        btnSwitch.isOn = false
+        tableView.isHidden = true
         publicHolidays = PublicHolidayRequest()
         pickerViewYear.selectRow(0, inComponent: 0, animated: false)
         
         selectedYear = YearProvider.getYearsList()[pickerViewYear.selectedRow(inComponent: 0)]
-
-        btnSwitch.isOn = false
-        tableView.isHidden = true
         
+        // Get the array of tuples of country code/name
         self.countryCodeCountryNameList = CountryProvider.getCountryCodeCountryNameList()
         
         /// order ascending the array of tuples, using the country code
         self.countryCodeCountryNameList = self.countryCodeCountryNameList!.sorted(by: { $0.0 < $1.0 })
         
-        //year = YearProvider.getYearsList()[0]
-        
-//        if(self.selectedCountryCode != nil && self.selectedYear != nil) {
-//            self.selectedHolidayCountryList = publicHolidays!.getPublicHolidaysList(countryCode: self.selectedCountryCode!, year: self.selectedYear!)
-//        }
-//
-//        if(self.selectedHolidayCountryList != nil) {
-//            publicHolidays!.printHolidaysListCountry(holidays: self.selectedHolidayCountryList!)
-//        }
-//
-//
-//
-//        print(self.countryCodesList)
-//
-//        if(self.selectedCountryCode != nil) {
-//            guard let countryCodeNameTuple = CountryProvider.find(contryCode: self.selectedCountryCode!) else {
-//                print("Country Code \(self.selectedCountryCode!) does not exist. Select other.")
-//                return
-//            }
-//
-//            print(type(of: countryCodeNameTuple))
-//            print("Country Code: \(countryCodeNameTuple.countryCode) Country Name: \(countryCodeNameTuple.countryName)")
-//        }
-//
-//        print(YearProvider.getYearsList())
-        
-        
     }
     
+    /**
+     * Define how many components the picker view will have
+     */
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    /**
+     * return the total quantity of number of components to show the rows
+     */
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return YearProvider.getYearsList().count
     }
     
+    /**
+     * Define wich element will be displayed
+     */
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return YearProvider.getYearsList()[row]
     }
     
+    /**
+     * Define how many components the picker view will have
+     */
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.selectedYear = YearProvider.getYearsList()[row]
-        //print("Year \(self.selectedYear!) selected")
     }
     
+    /**
+     * Limit the text fiel to allow only: Letters and control keys, maximum length to type is 2 and convert it to uppercase char
+     */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Only letters and control keys
         let allowedCharacters = CharacterSet.letters.union(.controlCharacters)
@@ -129,26 +104,35 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
         return false
     }
     
+    /**
+     * Display or hide list of country codes if the user want to consult and click on the switch element
+     */
     @IBAction func btnSwitchValueChanged(_ sender: Any) {
         tableView.isHidden.toggle()
-        
     }
     
-    
+    /**
+     * Return the quantity of total elements to be displayed in the tableView of countryCode/Name for the user review it
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.countryCodeCountryNameList!.count
     }
     
+    /**
+     * Display the elemente in the cell using reuseble cells
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         
         cell.textLabel?.text = "\(self.countryCodeCountryNameList![indexPath.row].countryCode) - \(self.countryCodeCountryNameList![indexPath.row].countryName)"
         
         return cell
     }
     
+    /**
+     * Rules to validate the user enter the contry code to be search and allow or not go to HolidaysViewController
+     */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
    
         if (identifier == Segue.toHolidaysViewController) {
@@ -165,22 +149,19 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
                 
                 self.selectedCountryImg = "\(self.selectedCountryCode!)-\(self.selectedCountryName!).png";
                 
-//                guard let countryCodeNameTuple = CountryProvider.find(contryCode: self.selectedCountryCode!) else {
-//                    print("Country Code \(self.selectedCountryCode!) does not exist. Select other.")
-//                    return
-//                }
-//                print(countryCode)
-//                print(year!)
                 return true
             }else{
                 Toast.ok(view: self, title: "Something is wrong!", message: "Country not available, Please try another contry code! (Ex: US, CA, etc...)", handler: nil)
                 return false
             }
         }
-        return true
+        return false
         
     }
     
+    /**
+     * Set the values in the next HolidaysViewController
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == Segue.toHolidaysViewController){
             
