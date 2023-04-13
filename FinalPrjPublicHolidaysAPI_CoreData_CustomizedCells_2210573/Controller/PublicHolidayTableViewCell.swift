@@ -12,7 +12,6 @@ class PublicHolidayTableViewCell: UITableViewCell {
     static let identifier : String = "PublicHolidayTableViewCell"
     
     @IBOutlet weak var lblHolidayName: UILabel!
-    
     @IBOutlet weak var lblHolidayDate: UILabel!
     
     @IBOutlet weak var imgNationalThumbsUpDown: UIImageView!
@@ -32,15 +31,20 @@ class PublicHolidayTableViewCell: UITableViewCell {
      * Set the values in the customized cell
      */
     public func setCellContent(holiday : Holiday) {
+        
         lblHolidayName.text = holiday.name
         lblHolidayDate.text = holiday.date
         
         if(holiday.counties == nil || holiday.counties!.count == 0) {
+            
             imgNationalThumbsUpDown.image = UIImage.init(systemName: "hand.thumbsup.fill")
             imgNationalThumbsUpDown.tintColor = UIColor.systemGreen
+            
         }else {
+            
             imgNationalThumbsUpDown.image = UIImage.init(systemName: "hand.thumbsdown.fill")
             imgNationalThumbsUpDown.tintColor = UIColor.systemRed
+            
         }
     }
     

@@ -19,6 +19,7 @@ class UserRegisteredListViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         tableView.dataSource = self
         tableView.delegate = self
     }

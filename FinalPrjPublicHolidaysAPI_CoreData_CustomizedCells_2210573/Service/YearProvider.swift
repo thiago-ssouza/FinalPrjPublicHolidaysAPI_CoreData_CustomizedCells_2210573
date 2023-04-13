@@ -10,7 +10,7 @@ import Foundation
 class YearProvider {
     
     /**
-     * Generate and return the list of years available
+     * Generate and return the list of available years
      */
     public static func getYearsList() -> [String] {
         let startYear : String = "1923"

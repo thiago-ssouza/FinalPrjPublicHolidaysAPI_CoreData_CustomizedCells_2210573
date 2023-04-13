@@ -82,14 +82,18 @@ class HolidayDetailsViewController: UIViewController, UITableViewDataSource, UIT
         
         if self.selectedProvincesStates!.count > 0 {
             tableView.separatorStyle = .singleLine
+            
             numOfSections = 1
+            
             tableView.backgroundView = nil
         } else {
             
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            
             noDataLabel.text = "\(self.selectedHoliday!.name) is a National Holiday"
             noDataLabel.textColor = UIColor.black
             noDataLabel.textAlignment = .center
+            
             tableView.backgroundView = noDataLabel
             tableView.separatorStyle = .none
         }

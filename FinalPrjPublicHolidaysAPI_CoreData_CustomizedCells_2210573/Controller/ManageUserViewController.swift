@@ -15,14 +15,10 @@ class ManageUserViewController: UIViewController {
     public var loggedUser : User?
     
     @IBOutlet weak var txtName: UITextField!
-    
     @IBOutlet weak var txtUsername: UITextField!
-    
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var btnEyeShowHidePassword: UIButton!
-    
-    
     @IBOutlet weak var btnDelete: UIButton!
     
     override func viewDidLoad() {
@@ -33,10 +29,12 @@ class ManageUserViewController: UIViewController {
         btnDelete.layer.cornerRadius = 15
         
         if self.loggedUser != nil { // insert mode
-        txtUsername.isEnabled = false
-        txtName.text = self.loggedUser!.name
-        txtUsername.text = self.loggedUser!.username
-        txtPassword.text = self.loggedUser!.password
+            
+            txtUsername.isEnabled = false
+            
+            txtName.text = self.loggedUser!.name
+            txtUsername.text = self.loggedUser!.username
+            txtPassword.text = self.loggedUser!.password
             
         }
     }
@@ -62,6 +60,7 @@ class ManageUserViewController: UIViewController {
         guard let name = txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines), (name.count >= User.NAME_MIN_LENGTH && name.count <= User.NAME_MAX_LENGTH) else {
             
             Toast.ok(view: self, title: "Something is wrong!", message: "Enter valid full name with length \(User.NAME_MIN_LENGTH)-\(User.NAME_MAX_LENGTH) characters!", handler: nil)
+            
             return
             
         }
@@ -69,6 +68,7 @@ class ManageUserViewController: UIViewController {
         guard let username = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(), (username.count >= User.USERNAME_MIN_LENGTH && username.count <= User.USERNAME_MAX_LENGTH) else {
 
             Toast.ok(view: self, title: "Something is wrong!", message: "Enter valid username with length \(User.USERNAME_MIN_LENGTH)-\(User.USERNAME_MAX_LENGTH) characters!", handler: nil)
+            
             return
 
         }
@@ -76,11 +76,13 @@ class ManageUserViewController: UIViewController {
         guard let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines), (password.count >= User.PASSWORD_MIN_LENGTH && password.count <= User.PASSWORD_MAX_LENGTH) else {
 
             Toast.ok(view: self, title: "Something is wrong!", message: "Enter valid password with length \(User.PASSWORD_MIN_LENGTH)-\(User.PASSWORD_MAX_LENGTH) characters!", handler: nil)
+            
             return
 
         }
         
         if self.loggedUser != nil { // update mode
+            
             self.loggedUser!.name = name
             self.loggedUser!.password = password
             
@@ -88,6 +90,7 @@ class ManageUserViewController: UIViewController {
                 navigationController?.popViewController(animated: true)
             } else {
                 Toast.ok(view: self, title: "Something is wrong!", message: "Problem to update the new user \(username)! Try again later!", handler: nil)
+                
                 return
             }
             

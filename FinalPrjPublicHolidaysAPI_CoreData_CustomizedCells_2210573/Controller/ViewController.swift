@@ -15,13 +15,10 @@ class ViewController: UIViewController {
     private var loggedUser : User?
     
     @IBOutlet weak var txtUsername: UITextField!
-    
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var btnEyeShowHidePassword: UIButton!
-    
     @IBOutlet weak var btnLogin: UIButton!
-    
     @IBOutlet weak var btnSignUp: UIButton!
     
     override func viewDidLoad() {

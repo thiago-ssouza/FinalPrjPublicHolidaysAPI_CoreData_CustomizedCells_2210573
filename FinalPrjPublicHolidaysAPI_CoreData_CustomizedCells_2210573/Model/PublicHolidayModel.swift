@@ -8,16 +8,16 @@
 import Foundation
 
 /// Struct to decode the API Public Holidays the holiday
-struct Holiday:Decodable {
-    var date:String
-    var localName:String
-    var name:String
-    var countryCode:String
-    var fixed:Bool
-    var global:Bool
-    var counties:[String]?
-    var launchYear:Date?
-    var type:String
+struct Holiday : Decodable {
+    var date : String
+    var name : String
+    var localName : String
+    var countryCode : String
+    var type : String
+    var fixed : Bool
+    var global : Bool
+    var counties : [String]?
+    var launchYear : Date?
 }
 
 

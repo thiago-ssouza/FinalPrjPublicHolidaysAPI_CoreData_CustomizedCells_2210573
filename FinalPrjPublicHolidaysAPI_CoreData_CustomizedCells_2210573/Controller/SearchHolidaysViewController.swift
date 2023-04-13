@@ -10,18 +10,26 @@ import UIKit
 class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
     internal var loggedUser : User?
+    
     private var publicHolidays : PublicHolidayRequest?
+    
     private var selectedHolidayCountryList : [Holiday]? = []
+    
+    private var countryCodeCountryNameList : [(countryCode:String, countryName:String)]?
+    
     private var selectedCountryCode : String?
     private var selectedCountryName : String?
     private var selectedYear : String?
     private var selectedCountryImg : String?
-    private var countryCodeCountryNameList : [(countryCode:String, countryName:String)]?
     
     @IBOutlet weak var pickerViewYear: UIPickerView!
+    
     @IBOutlet weak var txtCountryCode: UITextField!
+    
     @IBOutlet weak var btnSwitch: UISwitch!
+    
     @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var btnSearch: UIButton!
     
     override func viewDidLoad() {
@@ -30,14 +38,21 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Do any additional setup after loading the view.
         
         btnSearch.layer.cornerRadius = 15
+        
         pickerViewYear.dataSource = self
         pickerViewYear.delegate = self
+        
         txtCountryCode.delegate = self
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
         btnSwitch.isOn = false
+        
         tableView.isHidden = true
+        
         publicHolidays = PublicHolidayRequest()
+        
         pickerViewYear.selectRow(0, inComponent: 0, animated: false)
         
         selectedYear = YearProvider.getYearsList()[pickerViewYear.selectedRow(inComponent: 0)]
@@ -131,6 +146,13 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     /**
+     * When the user click on the row, set the text of the countryCode field to the countryCode
+     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        txtCountryCode.text = self.countryCodeCountryNameList![indexPath.row].countryCode
+    }
+    
+    /**
      * Rules to validate the user enter the contry code to be search and allow or not go to HolidaysViewController
      */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -169,6 +191,7 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
             
             holidaysViewController.selectedCountryCode = self.selectedCountryCode
             holidaysViewController.selectedCountryName = self.selectedCountryName
+            
             holidaysViewController.selectedYear = self.selectedYear
             
             self.selectedHolidayCountryList = publicHolidays!.getPublicHolidaysList(countryCode: self.selectedCountryCode!, year: self.selectedYear!)
