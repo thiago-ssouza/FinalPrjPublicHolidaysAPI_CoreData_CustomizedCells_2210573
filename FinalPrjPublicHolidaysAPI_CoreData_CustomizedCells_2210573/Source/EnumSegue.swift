@@ -11,11 +11,13 @@ import Foundation
  */
 enum Segue {
     
+    static let toViewControllerUnwind = "toViewControllerUnwind"
+    
     static let toSignUpViewController = "toSignUpViewController"
     
-    static let toManageUserViewController = "toManageUserViewController"
-    
     static let toSearchHolidaysViewController = "toSearchHolidaysViewController"
+    
+    static let toManageUserViewController = "toManageUserViewController"
     
     static let toHolidaysViewController = "toHolidaysViewController"
     

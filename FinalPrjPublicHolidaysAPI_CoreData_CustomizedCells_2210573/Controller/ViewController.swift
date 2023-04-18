@@ -31,6 +31,17 @@ class ViewController: UIViewController {
     }
     
     /**
+     * to perform the unwind segue to the ViewController (Login Page) when the user is correctly deleted in the ManageUserViewController
+     */
+    @IBAction func unwindToViewController(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+        sourceViewController.navigationController?.popViewController(animated: false)
+        txtPassword.text = "";
+        txtUsername.text = "";
+    }
+    
+    /**
      * Show or hide the Password for the user consuting
      */
     @IBAction func btnEyeShowHidePasswordTouchUpInside(_ sender: Any) {
@@ -44,12 +55,12 @@ class ViewController: UIViewController {
     }
     
     /**
-     * Validate the username and password to see if matches in the core data to go or not to SearchHolidaysViewController, ManageUserViewController. For the others view controllers it can go directly
+     * Validate the username and password to see if matches in the core data to go or not to SearchHolidaysViewController. For the others view controllers it can go directly
      */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         
-        if ( identifier == Segue.toSearchHolidaysViewController || identifier == Segue.toManageUserViewController ) {
+        if ( identifier == Segue.toSearchHolidaysViewController) {
             
             guard let username = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(), (username.count >= User.USERNAME_MIN_LENGTH && username.count <= User.USERNAME_MAX_LENGTH) else {
 
@@ -97,7 +108,7 @@ class ViewController: UIViewController {
     }
     
     /**
-     * Set the values in the next SearchHolidaysViewController or ManageUserViewController
+     * Set the values in the next SearchHolidaysViewController
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -106,14 +117,6 @@ class ViewController: UIViewController {
             let searchHolidaysViewController = segue.destination as! SearchHolidaysViewController
             
             searchHolidaysViewController.loggedUser = self.loggedUser
-            
-        }
-        
-        if segue.identifier == Segue.toManageUserViewController {
-            
-            let manageUserViewController = segue.destination as! ManageUserViewController
-            
-            manageUserViewController.loggedUser = self.loggedUser
             
         }
         

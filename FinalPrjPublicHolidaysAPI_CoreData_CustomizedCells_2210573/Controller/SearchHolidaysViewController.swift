@@ -153,7 +153,7 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     /**
-     * Rules to validate the user enter the contry code to be search and allow or not go to HolidaysViewController
+     * Rules to validate the user enter the contry code to be search and allow or not go to HolidaysViewController and ManageUserViewController
      */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
    
@@ -176,6 +176,11 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
                 Toast.ok(view: self, title: "Something is wrong!", message: "Country not available, Please try another contry code! (Ex: US, CA, etc...)", handler: nil)
                 return false
             }
+        }
+        if identifier == Segue.toManageUserViewController {
+            
+            return true
+            
         }
         return false
         
@@ -200,6 +205,14 @@ class SearchHolidaysViewController: UIViewController, UIPickerViewDelegate, UIPi
             holidaysViewController.publicHolidays = self.publicHolidays
             
             holidaysViewController.selectedCountryImg = self.selectedCountryImg
+        }
+        
+        if segue.identifier == Segue.toManageUserViewController {
+            
+            let manageUserViewController = segue.destination as! ManageUserViewController
+            
+            manageUserViewController.loggedUser = self.loggedUser
+            
         }
     }
 

@@ -99,16 +99,18 @@ class ManageUserViewController: UIViewController {
     }
     
     /**
-     * Delete the user loggedin when the user click on it
+     * Try to delete the user loggedin when the user click on the button delete and perform the unwind segue "toViewControllerUnwind" to the ViewController if the user was deleted. If the user is not deleted the  unwind segue will not be performed
      */
-    @IBAction func btnDeleteTouchUpInside(_ sender: Any) {
-        
-        if self.loggedUser!.delete(context: context) {
-            navigationController?.popViewController(animated: true)
-        } else {
-            Toast.ok(view: self, title: "Something is wrong!", message: "Problem to delete the user \(self.loggedUser!.username!)! Try again later!", handler: nil)
-            return
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(identifier == Segue.toViewControllerUnwind){
+            if self.loggedUser!.delete(context: context) {
+                return true
+            } else {
+                Toast.ok(view: self, title: "Something is wrong!", message: "Problem to delete the user \(self.loggedUser!.username!)! Try again later!", handler: nil)
+                return false
+            }
         }
+        return true
     }
     
 
